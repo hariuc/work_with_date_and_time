@@ -38,6 +38,24 @@ class WorkWithDateAndTime {
     }
   }
 
+  DateTime endOfMonth({required DateTime dateTime}) {
+    if (dateTime.month == 2) {
+      var day = 28;
+      if (isLeapYear(dateTime: dateTime)) day = 29;
+      return DateTime(dateTime.year, 2, day, 23, 59, 59, 999);
+    }
+
+    if (dateTime.month % 2 == 0 && dateTime.month <= 7) {
+      return DateTime(dateTime.year, dateTime.month, 30, 23, 59, 59, 999);
+    }
+
+    if (dateTime.month % 2 != 0 && dateTime.month > 7) {
+      return DateTime(dateTime.year, dateTime.month, 30, 23, 59, 59, 999);
+    }
+
+    return DateTime(dateTime.year, dateTime.month, 31, 23, 59, 59, 999);
+  }
+
   static DateTime endOfDay({required DateTime dateTime}) =>
       DateTime(dateTime.year, dateTime.month, dateTime.day, 23, 59, 59, 999);
 
