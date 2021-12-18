@@ -1,21 +1,9 @@
 class WorkWithDateAndTime {
-  
   static DateTime beginOfYear({required DateTime dateTime}) =>
       DateTime(dateTime.year);
 
-  static DateTime beginOfQuarter({required DateTime dateTime}) {
-    final month = dateTime.month;
-    final year = dateTime.year;
-    if (month >= 1 && month <= 3) {
-      return DateTime(year, 1, 1);
-    } else if (month >= 4 && month <= 6) {
-      return DateTime(year, 4, 1);
-    } else if (month >= 7 && month <= 9) {
-      return DateTime(year, 7, 1);
-    } else {
-      return DateTime(year, 10, 1);
-    }
-  }
+  static DateTime beginOfQuarter({required DateTime dateTime}) =>
+      DateTime(dateTime.year, (dateTime.month / 3).ceil(), 1);
 
   static DateTime beginOfMonth({required DateTime dateTime}) =>
       DateTime(dateTime.year, dateTime.month, 1);
