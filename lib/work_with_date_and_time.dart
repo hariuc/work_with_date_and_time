@@ -61,4 +61,14 @@ class WorkWithDateAndTime {
 
     return dateTime.subtract(Duration(days: numberOfDay));
   }
+
+  static bool isLeapYear({required DateTime dateTime}) {
+    if (dateTime.year % 4 == 0) {
+      if (dateTime.year % 100 == 0) {
+        if (dateTime.year % 400 == 0) return true;
+      } else
+        return true;
+    }
+    return false;
+  }
 }
