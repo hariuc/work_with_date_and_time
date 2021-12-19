@@ -9,7 +9,9 @@ A Dart library for working with DateTime
 
 ```yaml
 dependencies:
- work_with_date_and_time: ^0.0.1
+  work_with_date_and_time:
+    git:
+      url: https://github.com/hariuc/work_with_date_and_time.git
  ```
 
 2. Run `dart pub get` or `flutter pub get`
